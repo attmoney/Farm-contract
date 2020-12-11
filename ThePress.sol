@@ -813,8 +813,8 @@ contract Faucet is Ownable {
      */
     function updateMARKPerBlock(uint256 _markPerBlock) external onlyOwner returns (uint256) {
         require(_markPerBlock > 0, "Mark per Block must be greater than 0.");
-        markPerBlock = _markPerBlock;
         massUpdatePools();
+        markPerBlock = _markPerBlock;
         return markPerBlock;
     }
 
